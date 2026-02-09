@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { MapPin, Phone, ShieldCheck, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import serrurierImage from '../assets/serrurier-depaneur.jpg';
+import serrurierImage from '../assets/zones-hero.png';
 
 const zones = [
     { code: "31000", name: "Toulouse Centre" },

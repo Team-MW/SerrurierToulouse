@@ -3,7 +3,8 @@ import { ArrowRight, ShieldCheck, Clock, Key, Lock, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Reviews from '../components/Reviews';
-import serrurierImage from '../assets/serrurier-depaneur.jpg';
+import serrurierImage from '../assets/serrurier-hero.png';
+import serrurierTravailleImage from '../assets/serrurier-travaille-sur-porte.jpg';
 
 const Home = () => {
     const fadeInUp = {
@@ -194,8 +195,8 @@ const Home = () => {
                         >
                             <div className="bg-gradient-to-tr from-primary to-orange-600 rounded-2xl p-1 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                                 <img
-                                    src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2070&auto=format&fit=crop"
-                                    alt="Serrurier au travail"
+                                    src={serrurierTravailleImage}
+                                    alt="Serrurier professionnel travaillant sur une porte"
                                     loading="lazy"
                                     className="rounded-xl w-full h-[500px] object-cover filter brightness-90 contrast-110"
                                 />

@@ -1,4 +1,4 @@
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const reviews = [
@@ -30,7 +30,7 @@ const reviews = [
         name: "Nicolas P",
         date: "20/05/2025",
         rating: 5,
-        text: "Si vous cherchez un serrurier qui ne casse pas la porte pour une porte claquée avec une clé dans la serrure à l intérieur de l appartement qui vous empêche d'inserer votre clé depuis l extérieur , alors je vous recommande le serrurier toulousain. Ouverture de la porte avec une feuille plastifiée. Simple et efficace ! Merci beaucoup 😃"
+        text: "Si vous cherchez un serrurier qui ne casse pas la porte pour une porte claquée, je vous recommande le serrurier toulousain. Simple et efficace ! Merci beaucoup 😃"
     },
     {
         name: "Blaise Jean Pierre",
@@ -42,70 +42,113 @@ const reviews = [
 
 const Reviews = () => {
     return (
-        <section className="py-24 bg-gray-50 overflow-hidden">
+        <section className="py-20 bg-white">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                    <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-2">Avis Clients</h2>
-                    <h3 className="text-4xl font-bold text-secondary mb-4 flex items-center justify-center gap-3">
-                        Certifié par <span className="text-blue-600">Google</span>
-                        <div className="flex text-yellow-500">
+                {/* Header Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="max-w-3xl mx-auto text-center mb-16"
+                >
+                    <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-4">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                            alt="Google"
+                            className="w-5 h-5"
+                        />
+                        <span className="text-sm font-semibold text-gray-700">Avis Google Certifiés</span>
+                    </div>
+
+                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+                        Ce que disent nos clients
+                    </h2>
+
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                        <div className="flex gap-1">
                             {[...Array(5)].map((_, i) => (
-                                <Star key={i} size={24} fill="currentColor" />
+                                <Star key={i} size={28} fill="#FCD34D" className="text-yellow-400" />
                             ))}
                         </div>
-                    </h3>
-                    <p className="text-gray-500 max-w-2xl mx-auto">Découvrez les retours de nos clients satisfaits à Toulouse.</p>
-                </div>
+                        <span className="text-2xl font-bold text-secondary">5.0</span>
+                        <span className="text-gray-500">sur Google</span>
+                    </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <p className="text-gray-600">
+                        Plus de 150 avis clients vérifiés témoignent de notre expertise et notre réactivité
+                    </p>
+                </motion.div>
+
+                {/* Reviews Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     {reviews.map((review, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 relative group"
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
                         >
-                            <Quote className="absolute top-6 right-6 text-primary/10 group-hover:text-primary/20 transition-colors" size={40} />
-
-                            <div className="flex items-center gap-1 text-yellow-400 mb-4">
-                                {[...Array(review.rating)].map((_, i) => (
-                                    <Star key={i} size={16} fill="currentColor" />
-                                ))}
+                            {/* Header with stars and date */}
+                            <div className="flex items-center justify-between mb-3">
+                                <div className="flex gap-0.5">
+                                    {[...Array(review.rating)].map((_, i) => (
+                                        <Star key={i} size={16} fill="#FCD34D" className="text-yellow-400" />
+                                    ))}
+                                </div>
+                                <span className="text-xs text-gray-400 flex-shrink-0">{review.date}</span>
                             </div>
 
-                            <p className="text-gray-600 mb-6 italic leading-relaxed min-h-[80px]">"{review.text}"</p>
+                            {/* Review Text */}
+                            <div className="flex-grow mb-5">
+                                <Quote className="text-primary/20 mb-2" size={20} />
+                                <p className="text-gray-700 text-sm leading-relaxed min-h-[100px]">
+                                    {review.text}
+                                </p>
+                            </div>
 
-                            <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-4">
-                                <div className="w-10 h-10 bg-gradient-to-br from-primary to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">
+                            {/* Author */}
+                            <div className="flex items-center gap-3 pt-4 border-t border-gray-100 mt-auto">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center text-white font-bold shadow-sm flex-shrink-0">
                                     {review.name.charAt(0)}
                                 </div>
-                                <div>
-                                    <p className="font-bold text-secondary text-sm">{review.name}</p>
-                                    <p className="text-xs text-gray-400 flex items-center gap-1">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block"></span>
-                                        {review.date}
-                                    </p>
+                                <div className="flex-grow min-w-0">
+                                    <p className="font-semibold text-secondary text-sm truncate">{review.name}</p>
+                                    <p className="text-xs text-gray-500 whitespace-nowrap">Client vérifié</p>
                                 </div>
-                                <div className="ml-auto">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" className="w-5 h-5 opacity-70 grayscale group-hover:grayscale-0 transition-all" />
-                                </div>
+                                <img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                                    alt="Google"
+                                    className="w-4 h-4 opacity-50 flex-shrink-0"
+                                />
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
-                <div className="mt-16 text-center">
+                {/* CTA Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center"
+                >
                     <a
                         href="https://www.google.com/search?q=serrurier+toulouse"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-secondary font-bold hover:text-primary transition-colors border-b-2 border-primary/20 hover:border-primary pb-1"
+                        className="inline-flex items-center gap-2 bg-white border-2 border-gray-200 hover:border-primary text-secondary hover:text-primary font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
                     >
-                        Voir tous les avis sur Google <Star size={16} />
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                            alt="Google"
+                            className="w-5 h-5"
+                        />
+                        Voir tous nos avis sur Google
+                        <ExternalLink size={16} />
                     </a>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

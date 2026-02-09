@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Scale, Shield, FileText } from 'lucide-react';
-import serrurierImage from '../assets/serrurier-depaneur.jpg';
+import serrurierImage from '../assets/mentions-hero.png';
 
 const MentionsLegales = () => {
     return (

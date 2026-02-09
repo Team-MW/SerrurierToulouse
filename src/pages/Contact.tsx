@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import serrurierImage from '../assets/serrurier-depaneur.jpg';
+import { Mail, Phone, MapPin, Send, Shield } from 'lucide-react';
+import serrurierImage from '../assets/contact-hero.png';
 
 const Contact = () => {
     const handleSubmit = (e: React.FormEvent) => {
@@ -12,8 +12,9 @@ const Contact = () => {
     return (
         <>
             <Helmet>
-                <title>Contact Urgent - Serrurier Toulouse</title>
-                <meta name="description" content="Contactez notre serrurier à Toulouse pour un dépannage urgent ou un devis gratuit. Disponible 24/7 au 06 71 87 60 80." />
+                <title>Contact Serrurier Toulouse | Devis Gratuit & Dépannage Urgent 24/7</title>
+                <meta name="description" content="Contactez notre serrurier à Toulouse pour un dépannage urgent ou un devis gratuit. Disponible 24/7 au 06 71 87 60 80. Protection RGPD de vos données personnelles." />
+                <meta name="keywords" content="contact serrurier toulouse, devis serrurerie, dépannage urgent, serrurier 24/7, RGPD" />
             </Helmet>
 
             {/* Hero Section Wrapper - extends behind navbar */}
@@ -134,6 +135,47 @@ const Contact = () => {
                         </motion.div>
 
                     </div>
+
+                    {/* Section RGPD et Protection des Données */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mt-16 max-w-4xl mx-auto"
+                    >
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
+                            <h3 className="text-2xl font-bold text-secondary mb-6 flex items-center gap-3">
+                                <Shield className="text-primary" size={28} />
+                                Protection de vos Données Personnelles
+                            </h3>
+                            <div className="space-y-4 text-gray-700 leading-relaxed">
+                                <p>
+                                    <strong className="text-secondary">Conformité RGPD :</strong> Vos données personnelles sont traitées conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée.
+                                </p>
+                                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                                    <div className="bg-white p-4 rounded-lg">
+                                        <h4 className="font-bold text-secondary mb-2">📋 Finalité du traitement</h4>
+                                        <p className="text-sm">Les informations collectées via ce formulaire sont utilisées uniquement pour traiter votre demande de devis ou de dépannage.</p>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-lg">
+                                        <h4 className="font-bold text-secondary mb-2">⏱️ Conservation des données</h4>
+                                        <p className="text-sm">Vos données sont conservées pendant 3 ans maximum, conformément aux recommandations de la CNIL.</p>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-lg">
+                                        <h4 className="font-bold text-secondary mb-2">🔒 Sécurité</h4>
+                                        <p className="text-sm">Nous mettons en œuvre toutes les mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé.</p>
+                                    </div>
+                                    <div className="bg-white p-4 rounded-lg">
+                                        <h4 className="font-bold text-secondary mb-2">✅ Vos droits</h4>
+                                        <p className="text-sm">Vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition. Contactez-nous à contact@leserruriertoulousain.com</p>
+                                    </div>
+                                </div>
+                                <p className="text-sm text-gray-600 mt-6 italic">
+                                    En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour répondre à votre demande. Aucune donnée ne sera transmise à des tiers sans votre consentement explicite.
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
