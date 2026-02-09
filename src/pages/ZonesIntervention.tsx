@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { MapPin, Phone, ShieldCheck, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import serrurierImage from '../assets/serrurier-depaneur.jpg';
 
 const zones = [
     { code: "31000", name: "Toulouse Centre" },
@@ -31,21 +32,33 @@ const ZonesIntervention = () => {
                 <meta name="description" content="Intervention de serrurerie rapide sur Toulouse (31000, 31200, 31300, 31400, 31500) et ses alentours. Disponible 24h/24 et 7j/7 dans toute la Haute-Garonne pour ouverture de porte et sécurisation." />
             </Helmet>
 
-            <section className="bg-secondary text-white py-20 relative text-center">
-                <div className="container mx-auto px-4">
-                    <motion.h1
-                        className="text-4xl font-bold mb-4"
-                        initial={{ y: -20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        Zones d'Intervention Serrurier Toulouse
-                    </motion.h1>
-                    <p className="text-gray-300 max-w-2xl mx-auto">
-                        Notre équipe de serruriers qualifiés intervient rapidement dans tous les quartiers de Toulouse et les communes de la Haute-Garonne.
-                    </p>
-                </div>
-            </section>
+            {/* Hero Section Wrapper - extends behind navbar */}
+            <div className="relative -mt-20">
+                {/* Background Image - starts from very top */}
+                <img
+                    src={serrurierImage}
+                    alt="Serrurier professionnel au travail"
+                    className="absolute top-0 left-0 w-full h-[380px] object-cover z-0"
+                />
+                {/* Background Overlay */}
+                <div className="absolute top-0 left-0 w-full h-[380px] bg-gradient-to-r from-secondary via-secondary opacity-70 z-10"></div>
+
+                <section className="relative text-white py-20 pt-32 text-center">
+                    <div className="container mx-auto px-4 z-10 relative">
+                        <motion.h1
+                            className="text-4xl font-bold mb-4"
+                            initial={{ y: -20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            Zones d'Intervention Serrurier Toulouse
+                        </motion.h1>
+                        <p className="text-gray-300 max-w-2xl mx-auto">
+                            Notre équipe de serruriers qualifiés intervient rapidement dans tous les quartiers de Toulouse et les communes de la Haute-Garonne.
+                        </p>
+                    </div>
+                </section>
+            </div>
 
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">

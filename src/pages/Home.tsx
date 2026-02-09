@@ -22,65 +22,71 @@ const Home = () => {
                 <meta name="description" content="Serrurier expert à Toulouse. Intervention rapide en 30 min pour ouverture de porte, changement de serrure et sécurisation. Devis gratuit." />
             </Helmet>
 
-            {/* Hero Section - Dark Background (Image or Gradient) */}
-            <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-secondary text-white">
-                {/* Background Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary z-10 opacity-50"></div>
+            {/* Hero Section Wrapper - extends behind navbar */}
+            <div className="relative -mt-20">
+                {/* Background Image - starts from very top */}
                 <img
                     src={serrurierImage}
                     alt="Serrurier professionnel au travail"
-                    className="absolute inset-0 w-full h-full object-cover z-0"
+                    className="absolute top-0 left-0 w-full h-[calc(100vh+5rem)] object-cover z-0"
                 />
+                {/* Background Overlay */}
+                <div className="absolute top-0 left-0 w-full h-[calc(100vh+5rem)] bg-gradient-to-r from-secondary via-secondary opacity-50 z-10"></div>
 
-                <div className="container mx-auto px-4 z-20 relative">
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={stagger}
-                        className="max-w-3xl space-y-8"
-                    >
-                        <motion.h1
-                            variants={fadeInUp}
-                            className="text-5xl md:text-7xl font-bold tracking-tight leading-tight"
+                {/* Hero Section Content */}
+                <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden text-white pt-20">
+
+
+                    <div className="container mx-auto px-4 z-20 relative">
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={stagger}
+                            className="max-w-3xl space-y-8"
                         >
-                            Votre Sécurité,<br />
-                            <span className="text-primary">Notre Priorité.</span>
-                        </motion.h1>
-
-                        <motion.p
-                            variants={fadeInUp}
-                            className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl"
-                        >
-                            Serrurier professionnel à Toulouse. Intervention d'urgence en 30 minutes, 24h/24 et 7j/7.
-                        </motion.p>
-
-                        <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <a
-                                href="tel:+33671876080"
-                                className="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-500/30"
+                            <motion.h1
+                                variants={fadeInUp}
+                                className="text-5xl md:text-7xl font-bold tracking-tight leading-tight"
                             >
-                                <Phone size={24} />
-                                06 71 87 60 80
-                            </a>
-                            <Link
-                                to="/contact"
-                                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 transition-all"
-                            >
-                                Demander un devis <ArrowRight size={20} />
-                            </Link>
-                        </motion.div>
+                                Votre Sécurité,<br />
+                                <span className="text-primary">Notre Priorité.</span>
+                            </motion.h1>
 
-                        <motion.div variants={fadeInUp} className="pt-8 flex items-center gap-8 text-sm font-medium text-gray-400">
-                            <div className="flex items-center gap-2">
-                                <ShieldCheck className="text-primary" /> Agréé Assurances
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Clock className="text-primary" /> Intervention 30 min
-                            </div>
+                            <motion.p
+                                variants={fadeInUp}
+                                className="text-xl md:text-2xl text-gray-300 font-light max-w-2xl"
+                            >
+                                Serrurier professionnel à Toulouse. Intervention d'urgence en 30 minutes, 24h/24 et 7j/7.
+                            </motion.p>
+
+                            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
+                                <a
+                                    href="tel:+33671876080"
+                                    className="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-500/30"
+                                >
+                                    <Phone size={24} />
+                                    06 71 87 60 80
+                                </a>
+                                <Link
+                                    to="/contact"
+                                    className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-2 transition-all"
+                                >
+                                    Demander un devis <ArrowRight size={20} />
+                                </Link>
+                            </motion.div>
+
+                            <motion.div variants={fadeInUp} className="pt-8 flex items-center gap-8 text-sm font-medium text-gray-400">
+                                <div className="flex items-center gap-2">
+                                    <ShieldCheck className="text-primary" /> Agréé Assurances
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Clock className="text-primary" /> Intervention 30 min
+                                </div>
+                            </motion.div>
                         </motion.div>
-                    </motion.div>
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
 
             {/* Services Preview - Light Background */}
             <section className="py-24 bg-white">

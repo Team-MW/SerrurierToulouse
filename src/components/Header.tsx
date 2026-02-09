@@ -22,14 +22,14 @@ const Header = () => {
     ];
 
     return (
-        <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+        <header className="sticky top-0 z-50 bg-transparent shadow-sm border-b border-transparent transition-all duration-300">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
                         <img src="/logo.png" alt="Serrurier Toulouse Logo" className="h-12 w-auto" />
                         <div className="flex flex-col">
-                            <span className="text-xl font-bold font-sans tracking-tight text-secondary leading-none">Serrurier</span>
+                            <span className="text-xl font-bold font-sans tracking-tight text-white leading-none">Serrurier</span>
                             <span className="text-xs font-bold text-primary tracking-widest uppercase leading-none">Toulouse</span>
                         </div>
                     </Link>
@@ -40,7 +40,7 @@ const Header = () => {
                             <Link
                                 key={link.path}
                                 to={link.path}
-                                className={`text-sm font-semibold uppercase tracking-wide transition-colors duration-300 hover:text-primary ${location.pathname === link.path ? 'text-primary' : 'text-gray-600'
+                                className={`text-sm font-semibold uppercase tracking-wide transition-colors duration-300 hover:text-primary ${location.pathname === link.path ? 'text-primary' : 'text-white'
                                     }`}
                             >
                                 {link.name}
@@ -58,7 +58,7 @@ const Header = () => {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={toggleMenu}
-                        className="md:hidden p-2 text-secondary hover:text-primary transition-colors focus:outline-none"
+                        className="md:hidden p-2 text-white hover:text-primary transition-colors focus:outline-none"
                         aria-label="Menu"
                     >
                         {isOpen ? <X size={28} /> : <Menu size={28} />}

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Lock, ShieldCheck, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import serrurierImage from '../assets/serrurier-depaneur.jpg';
 
 const Portfolio = () => {
     const projects = [
@@ -35,17 +36,31 @@ const Portfolio = () => {
                 <meta name="description" content="Découvrez nos interventions et installations de serrurerie à Toulouse en images." />
             </Helmet>
 
-            <section className="bg-secondary text-white py-20 relative text-center">
-                <motion.h1
-                    className="text-4xl font-bold mb-4"
-                    initial={{ y: -20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    Nos Réalisations
-                </motion.h1>
-                <p className="text-gray-300 max-w-2xl mx-auto">La qualité de notre travail en images.</p>
-            </section>
+            {/* Hero Section Wrapper - extends behind navbar */}
+            <div className="relative -mt-20">
+                {/* Background Image - starts from very top */}
+                <img
+                    src={serrurierImage}
+                    alt="Serrurier professionnel au travail"
+                    className="absolute top-0 left-0 w-full h-[350px] object-cover z-0"
+                />
+                {/* Background Overlay */}
+                <div className="absolute top-0 left-0 w-full h-[350px] bg-gradient-to-r from-secondary via-secondary opacity-70 z-10"></div>
+
+                <section className="relative text-white py-20 pt-32 text-center">
+                    <div className="container mx-auto px-4 z-10 relative">
+                        <motion.h1
+                            className="text-4xl font-bold mb-4"
+                            initial={{ y: -20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            Nos Réalisations
+                        </motion.h1>
+                        <p className="text-gray-300 max-w-2xl mx-auto">La qualité de notre travail en images.</p>
+                    </div>
+                </section>
+            </div>
 
             <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4">

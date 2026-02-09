@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Shield, Key, FileCheck, Phone, AlertTriangle } from 'lucide-react';
+import serrurierImage from '../assets/serrurier-depaneur.jpg';
 
 const Services = () => {
     const services = [
@@ -37,20 +38,31 @@ const Services = () => {
                 <meta name="description" content="Découvrez nos services de serrurerie : ouverture de porte, blindage, changement de serrure, dépannage d'urgence 24/7." />
             </Helmet>
 
-            <section className="bg-secondary text-white py-20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20 z-0"></div>
-                <div className="container mx-auto px-4 z-10 relative text-center">
-                    <motion.h1
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-bold mb-6"
-                    >
-                        Nos Prestations Serrurerie
-                    </motion.h1>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">Expertise, rapidité et transparence pour votre sécurité.</p>
-                </div>
-            </section>
+            {/* Hero Section Wrapper - extends behind navbar */}
+            <div className="relative -mt-20">
+                {/* Background Image - starts from very top */}
+                <img
+                    src={serrurierImage}
+                    alt="Serrurier professionnel au travail"
+                    className="absolute top-0 left-0 w-full h-[400px] object-cover z-0"
+                />
+                {/* Background Overlay */}
+                <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-r from-secondary via-secondary opacity-70 z-10"></div>
+
+                <section className="relative text-white py-20 pt-32 text-center">
+                    <div className="container mx-auto px-4 z-10 relative">
+                        <motion.h1
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="text-4xl md:text-5xl font-bold mb-6"
+                        >
+                            Nos Prestations Serrurerie
+                        </motion.h1>
+                        <p className="text-xl text-gray-300 max-w-2xl mx-auto">Expertise, rapidité et transparence pour votre sécurité.</p>
+                    </div>
+                </section>
+            </div>
 
             <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4">

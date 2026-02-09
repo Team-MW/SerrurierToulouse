@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import serrurierImage from '../assets/serrurier-depaneur.jpg';
 
 const Contact = () => {
     const handleSubmit = (e: React.FormEvent) => {
@@ -15,17 +16,31 @@ const Contact = () => {
                 <meta name="description" content="Contactez notre serrurier à Toulouse pour un dépannage urgent ou un devis gratuit. Disponible 24/7 au 06 71 87 60 80." />
             </Helmet>
 
-            <section className="bg-secondary text-white py-20 relative text-center">
-                <motion.h1
-                    className="text-4xl font-bold mb-4"
-                    initial={{ y: -20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    Contactez-nous
-                </motion.h1>
-                <p className="text-gray-300 max-w-2xl mx-auto">Une urgence ? Appelez-nous directement. Pour un projet, remplissez le formulaire.</p>
-            </section>
+            {/* Hero Section Wrapper - extends behind navbar */}
+            <div className="relative -mt-20">
+                {/* Background Image - starts from very top */}
+                <img
+                    src={serrurierImage}
+                    alt="Serrurier professionnel au travail"
+                    className="absolute top-0 left-0 w-full h-[350px] object-cover z-0"
+                />
+                {/* Background Overlay */}
+                <div className="absolute top-0 left-0 w-full h-[350px] bg-gradient-to-r from-secondary via-secondary opacity-70 z-10"></div>
+
+                <section className="relative text-white py-20 pt-32 text-center">
+                    <div className="container mx-auto px-4 z-10 relative">
+                        <motion.h1
+                            className="text-4xl font-bold mb-4"
+                            initial={{ y: -20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            Contactez-nous
+                        </motion.h1>
+                        <p className="text-gray-300 max-w-2xl mx-auto">Une urgence ? Appelez-nous directement. Pour un projet, remplissez le formulaire.</p>
+                    </div>
+                </section>
+            </div>
 
             <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4">

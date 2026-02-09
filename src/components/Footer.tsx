@@ -86,9 +86,22 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Serrurier Toulouse. Tous droits réservés.</p>
+                    <div className="flex flex-col items-center md:items-start gap-2">
+                        <p>&copy; {new Date().getFullYear()} Serrurier Toulouse. Tous droits réservés.</p>
+                        <p className="text-xs text-gray-600">
+                            Développé par{' '}
+                            <a
+                                href="https://microdidact.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-orange-400 transition-colors font-semibold"
+                            >
+                                Microdidact
+                            </a>
+                        </p>
+                    </div>
                     <div className="flex gap-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white transition-colors">Confidentialité</a>
+                        <a href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</a>
                         <a href="#" className="hover:text-white transition-colors">Conditions</a>
                     </div>
                 </div>
