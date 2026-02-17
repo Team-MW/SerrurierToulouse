@@ -1,13 +1,28 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Mail, Phone, MapPin, Send, Shield } from 'lucide-react';
+import { Mail, Phone, MapPin, Shield } from 'lucide-react';
 import serrurierImage from '../assets/contact-hero.png';
 
+import { useEffect, useRef } from 'react';
+
 const Contact = () => {
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        alert("Merci ! Votre demande a été envoyée. Nous vous contacterons rapidement.");
-    };
+    const formContainerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "https://form.jotform.com/jsform/253384764001353";
+        script.async = true;
+
+        if (formContainerRef.current) {
+            formContainerRef.current.appendChild(script);
+        }
+
+        return () => {
+            if (formContainerRef.current) {
+                formContainerRef.current.innerHTML = '';
+            }
+        };
+    }, []);
 
     return (
         <>
@@ -99,39 +114,7 @@ const Contact = () => {
                             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
                         >
                             <h2 className="text-2xl font-bold text-secondary mb-6">Demander un Devis Gratuit</h2>
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
-                                        <input type="text" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Votre nom" required />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
-                                        <input type="tel" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="06 12 34 56 78" required />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                    <input type="email" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="votre@email.com" required />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
-                                    <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
-                                        <option>Urgence - Porte claquée/fermée</option>
-                                        <option>Changement de serrure</option>
-                                        <option>Blindage de porte</option>
-                                        <option>Autre demande</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                                    <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Décrivez votre problème..." required></textarea>
-                                </div>
-                                <button type="submit" className="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20 flex justify-center items-center gap-2">
-                                    <Send size={20} />
-                                    Envoyer ma demande
-                                </button>
-                            </form>
+                            <div ref={formContainerRef} className="w-full min-h-[500px]"></div>
                         </motion.div>
 
                     </div>
