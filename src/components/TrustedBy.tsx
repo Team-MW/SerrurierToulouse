@@ -7,10 +7,10 @@ import partner4 from '../assets/logopartenaire3.png';
 
 const TrustedBy = () => {
     const partners = [
-        { src: partner1, alt: "Partenaire 1" },
-        { src: partner2, alt: "Partenaire 2" },
-        { src: partner3, alt: "Partenaire 3" },
-        { src: partner4, alt: "Partenaire 4" },
+        { src: partner1, alt: "Orchestra" },
+        { src: partner2, alt: "Maison du Monde" },
+        { src: partner3, alt: "Maison Ranger" },
+        { src: partner4, alt: "Et bien d'autres..." },
     ];
 
     // Duplicate enough times to ensure smooth scrolling on large screens

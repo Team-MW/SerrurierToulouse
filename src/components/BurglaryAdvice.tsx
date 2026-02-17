@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
-import { ShieldAlert, PhoneCall, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import serrurierTravaille from '../assets/serrurier-travaille-sur-porte.jpg';
 
 const BurglaryAdvice = () => {
     return (
@@ -24,19 +24,19 @@ const BurglaryAdvice = () => {
                 <div className="grid md:grid-cols-3 gap-8">
                     {[
                         {
-                            icon: <ShieldAlert size={48} className="text-red-500 mb-4" />,
-                            step: "1. Ne touchez à rien et Appelez la Police/Gendarmerie",
-                            desc: "Il est impératif de prévenir les forces de l'ordre (17 ou 112) immédiatement. Ne touchez à rien pour préserver les éventuelles preuves (empreintes, traces d'effraction) jusqu'à leur arrivée."
+                            image: "https://images.unsplash.com/photo-1555881400-74d7acaacd81?auto=format&fit=crop&q=80&w=800",
+                            step: "1. Appelez la Police / Gendarmerie",
+                            desc: "Ne touchez à rien ! Appelez immédiatement le 17 ou le 112. Les forces de l'ordre doivent constater l'effraction et relever les empreintes avant toute intervention."
                         },
                         {
-                            icon: <PhoneCall size={48} className="text-primary mb-4" />,
-                            step: "2. Contactez votre Serrurier pour sécuriser",
-                            desc: "Une fois les forces de l'ordre passées, nous intervenons en urgence pour effectuer une fermeture provisoire ou remplacer les serrures endommagées afin de sécuriser votre domicile immédiatement."
+                            image: serrurierTravaille,
+                            step: "2. Sécurisation Immédiate",
+                            desc: "Contactez-nous pour une fermeture provisoire ou un remplacement de serrure. Nous intervenons en urgence pour sécuriser votre habitation et vous rassurer."
                         },
                         {
-                            icon: <FileText size={48} className="text-blue-500 mb-4" />,
-                            step: "3. Déclarez le sinistre à votre Assurance",
-                            desc: "Vous disposez de 2 jours ouvrés pour déclarer le cambriolage à votre assurance. Conservez notre facture, elle sera nécessaire pour votre indemnisation. Nous sommes agréés par la plupart des assurances."
+                            image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+                            step: "3. Déclaration Assurance",
+                            desc: "Portez plainte au commissariat et contactez votre assurance sous 2 jours ouvré. Nos factures détaillées et agréées facilitent votre remboursement intégral."
                         }
                     ].map((item, index) => (
                         <motion.div
@@ -45,15 +45,25 @@ const BurglaryAdvice = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="bg-gray-50 p-8 rounded-xl border-l-4 border-l-primary shadow-sm hover:shadow-md transition-shadow"
+                            className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-100"
                         >
-                            <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mb-6 shadow-sm mx-auto md:mx-0">
-                                {item.icon}
+                            <div className="h-48 overflow-hidden relative">
+                                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10"></div>
+                                <img
+                                    src={item.image}
+                                    alt={item.step}
+                                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                                />
+                                <div className="absolute top-0 left-0 bg-primary text-white font-bold px-3 py-1 rounded-br-lg z-20">
+                                    Étape {index + 1}
+                                </div>
                             </div>
-                            <h3 className="text-xl font-bold text-gray-800 mb-3">{item.step}</h3>
-                            <p className="text-gray-600 prominent-text leading-relaxed">
-                                {item.desc}
-                            </p>
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-800 mb-3">{item.step}</h3>
+                                <p className="text-gray-600 leading-relaxed text-sm">
+                                    {item.desc}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

@@ -88,7 +88,7 @@ export const cityData: Record<string, {
             { question: "Garanti sur les pièces ?", answer: "Oui, toutes nos serrures installées sont garanties pièces et main d'œuvre." }
         ]
     },
-    "leysses": { // Correction from user input "seisse" likely "Seysses"
+    "seysses": {
         name: "Seysses",
         slug: "seysses",
         zip: "31600",
@@ -110,7 +110,7 @@ export const cityData: Record<string, {
         description: "Zone économique majeure et résidentielle, Blagnac est au cœur de notre activité. Intervention rapide garantie.",
         content: "Nous servons aussi bien les particuliers du vieux Blagnac que les entreprises de la zone aéroportuaire. Nos compétences s'étendent au déblocage de rideaux métalliques de magasins et à la gestion d'organigrammes de clés pour les bureaux.",
         faq: [
-            { question: "Intervenez-vous pour les entreprises à Blagnac ?", answer: "Oui, nous avons une offre dédiée aux professionnels (bureaux, commerces, entrepôts)." },
+            { question: "Intervenez-vous pour les entreprises à Blagnac ?", answer: "Oui, nous proposons des contrats de maintenance pour les professionnels." },
             { question: "Délai d'intervention à Blagnac ?", answer: "Environ 20 à 30 minutes selon la circulation." }
         ]
     },
