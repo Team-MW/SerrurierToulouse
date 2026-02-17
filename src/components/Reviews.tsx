@@ -19,30 +19,12 @@ const reviews = [
         date: "05/06/2025",
         rating: 5,
         text: "Serrurier au top, réactif, et travail bien fait. Artisan de confiance, nous gardons soigneusement ses coordonnées."
-    },
-    {
-        name: "Uzades Uziel",
-        date: "05/06/2025",
-        rating: 5,
-        text: "Entreprise, très efficasse, rapide avec prix très corrects. Merci beaucoup pour l intérêt de votre intervention et pose de matériel."
-    },
-    {
-        name: "Nicolas P",
-        date: "20/05/2025",
-        rating: 5,
-        text: "Si vous cherchez un serrurier qui ne casse pas la porte pour une porte claquée, je vous recommande le serrurier toulousain. Simple et efficace ! Merci beaucoup 😃"
-    },
-    {
-        name: "Blaise Jean Pierre",
-        date: "05/05/2025",
-        rating: 5,
-        text: "Très satisfait du service ! Rapide et efficace + les prix très correct. Je recommande les yeux fermés . Merci pour la réactivité"
     }
 ];
 
 const Reviews = () => {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
             <div className="container mx-auto px-4">
                 {/* Header Section */}
                 <motion.div
@@ -51,16 +33,9 @@ const Reviews = () => {
                     viewport={{ once: true }}
                     className="max-w-3xl mx-auto text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-4">
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                            alt="Google"
-                            className="w-5 h-5"
-                        />
-                        <span className="text-sm font-semibold text-gray-700">Avis Google Certifiés</span>
-                    </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+
+                    <h2 className="text-3xl font-bold text-secondary mb-2">
                         Ce que disent nos clients
                     </h2>
 
@@ -80,7 +55,7 @@ const Reviews = () => {
                 </motion.div>
 
                 {/* Reviews Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
                     {reviews.map((review, index) => (
                         <motion.div
                             key={index}
@@ -128,27 +103,7 @@ const Reviews = () => {
                 </div>
 
                 {/* CTA Button */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                >
-                    <a
-                        href="https://www.google.com/search?q=serrurier+toulouse"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-white border-2 border-gray-200 hover:border-primary text-secondary hover:text-primary font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
-                    >
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                            alt="Google"
-                            className="w-5 h-5"
-                        />
-                        Voir tous nos avis sur Google
-                        <ExternalLink size={16} />
-                    </a>
-                </motion.div>
+
             </div>
         </section>
     );

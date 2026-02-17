@@ -1,59 +1,10 @@
+
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { MapPin, Phone, ShieldCheck, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import serrurierImage from '../assets/zones-hero.png';
-
-// Principales villes et communes du département 31 (Haute-Garonne)
-const zones = [
-    { code: "31000", name: "Toulouse Centre" },
-    { code: "31100", name: "Toulouse" },
-    { code: "31120", name: "Portet-sur-Garonne" },
-    { code: "31140", name: "Aucamville" },
-    { code: "31150", name: "Bruguières" },
-    { code: "31170", name: "Tournefeuille" },
-    { code: "31200", name: "Toulouse Minimes" },
-    { code: "31240", name: "L'Union" },
-    { code: "31270", name: "Cugnaux" },
-    { code: "31300", name: "Toulouse Saint-Cyprien" },
-    { code: "31320", name: "Castanet-Tolosan" },
-    { code: "31400", name: "Toulouse Rangueil" },
-    { code: "31500", name: "Toulouse Purpan" },
-    { code: "31520", name: "Ramonville-Saint-Agne" },
-    { code: "31600", name: "Muret" },
-    { code: "31650", name: "Saint-Orens-de-Gameville" },
-    { code: "31670", name: "Labège" },
-    { code: "31700", name: "Blagnac" },
-    { code: "31750", name: "Escalquens" },
-    { code: "31770", name: "Colomiers" },
-    { code: "31830", name: "Plaisance-du-Touch" },
-    { code: "31850", name: "Beaupuy" },
-    { code: "31860", name: "Pins-Justaret" },
-    { code: "31400", name: "Balma" },
-    { code: "31200", name: "Castelginest" },
-    { code: "31140", name: "Launaguet" },
-    { code: "31700", name: "Beauzelle" },
-    { code: "31700", name: "Cornebarrieu" },
-    { code: "31170", name: "Tournefeuille" },
-    { code: "31120", name: "Roques" },
-    { code: "31600", name: "Seysses" },
-    { code: "31470", name: "Fonsorbes" },
-    { code: "31470", name: "Saint-Lys" },
-    { code: "31270", name: "Villeneuve-Tolosane" },
-    { code: "31790", name: "Saint-Jory" },
-    { code: "31650", name: "Auzeville-Tolosane" },
-    { code: "31660", name: "Bessières" },
-    { code: "31180", name: "Rouffiac-Tolosan" },
-    { code: "31200", name: "Fenouillet" },
-    { code: "31540", name: "Saint-Félix-Lauragais" },
-    { code: "31450", name: "Montgiscard" },
-    { code: "31390", name: "Carbonne" },
-    { code: "31800", name: "Saint-Gaudens" },
-    { code: "31410", name: "Noé" },
-    { code: "31620", name: "Fronton" },
-    { code: "31560", name: "Nailloux" },
-    { code: "31290", name: "Villefranche-de-Lauragais" }
-];
+import { cityData } from '../data/citiesData';
 
 const marques = [
     {
@@ -86,9 +37,9 @@ const ZonesIntervention = () => {
     return (
         <>
             <Helmet>
-                <title>Serrurier Toulouse & Haute-Garonne (31) - Intervention Rapide dans 47 Communes</title>
-                <meta name="description" content="Serrurier professionnel intervenant dans tout le département 31 : Toulouse, Colomiers, Blagnac, Muret, Tournefeuille, Balma... Dépannage 24/7 en 30 min. Devis gratuit." />
-                <meta name="keywords" content="serrurier toulouse, serrurier 31, serrurier haute-garonne, serrurier colomiers, serrurier blagnac, serrurier muret, dépannage serrurerie toulouse" />
+                <title>Serrurier Toulouse & Haute-Garonne (31) - Intervention Rapide</title>
+                <meta name="description" content="Serrurier professionnel intervenant à Toulouse et ses environs : Cugnaux, Blagnac, Colomiers... Dépannage 24/7 en 30 min. Devis gratuit." />
+                <meta name="keywords" content="serrurier toulouse, serrurier cugnaux, serrurier blagnac, serrurier colomiers, dépannage serrurerie 31" />
             </Helmet>
 
             {/* Hero Section Wrapper - extends behind navbar */}
@@ -110,10 +61,10 @@ const ZonesIntervention = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5 }}
                         >
-                            Serrurier dans tout le département 31
+                            Serrurier Haute-Garonne (31)
                         </motion.h1>
                         <p className="text-gray-300 max-w-2xl mx-auto">
-                            Intervention rapide dans 47 communes de la Haute-Garonne. Service disponible 24h/24 et 7j/7.
+                            Intervention rapide sur Toulouse et sa périphérie. Service disponible 24h/24 et 7j/7.
                         </p>
                     </div>
                 </section>
@@ -123,7 +74,7 @@ const ZonesIntervention = () => {
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
                         <div>
-                            <h2 className="text-3xl font-bold text-secondary mb-6">Serrurier disponible partout en Haute-Garonne</h2>
+                            <h2 className="text-3xl font-bold text-secondary mb-6">Serrurier disponible partout autour de Toulouse</h2>
                             <p className="text-gray-600 mb-6 leading-relaxed">
                                 Que vous habitiez à Toulouse centre, Colomiers, Blagnac, Muret, Tournefeuille, Balma ou toute autre commune du département 31,
                                 nous vous garantissons une intervention rapide. Nos techniciens sont géolocalisés pour arriver chez vous en moins de 30 minutes en cas d'urgence.
@@ -152,37 +103,43 @@ const ZonesIntervention = () => {
                                 Couverture géographique
                             </h3>
                             <p className="text-gray-600 mb-4">
-                                <strong className="text-secondary">47 communes</strong> du département de la Haute-Garonne (31) couvertes par notre service de serrurerie professionnelle.
+                                Nous couvrons l'ensemble des communes limitrophes de Toulouse.
                             </p>
                             <div className="bg-white p-4 rounded-lg border border-primary/20">
                                 <p className="text-sm text-gray-700 leading-relaxed">
-                                    <strong className="text-primary">Zone prioritaire :</strong> Toulouse et agglomération (Colomiers, Blagnac, Tournefeuille, Balma, L'Union, Ramonville, Muret)
+                                    <strong className="text-primary">Zone prioritaire :</strong> Toulouse et agglomération (Colomiers, Blagnac, Tournefeuille, Frouzins, Cugnaux, etc.)
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    {/* Liste des zones */}
+                    {/* Liste des zones prioritaires avec pages dédiées */}
                     <div className="mb-16">
-                        <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Toutes nos zones d'intervention</h2>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {zones.map((zone, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.3, delay: index * 0.02 }}
-                                    className="bg-white border border-gray-200 rounded-lg p-4 hover:border-primary hover:shadow-md transition-all duration-300"
+                        <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Nos Zones Principales d'Intervention</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {Object.values(cityData).map((city, index) => (
+                                <Link
+                                    key={city.slug}
+                                    to={`/intervention/${city.slug}`}
+                                    className="group block"
                                 >
-                                    <div className="flex items-start gap-3">
-                                        <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
-                                        <div>
-                                            <p className="font-semibold text-secondary text-sm">{zone.name}</p>
-                                            <p className="text-xs text-gray-500">{zone.code}</p>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                                        className="bg-white border border-gray-200 rounded-xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300 h-full flex flex-col items-center text-center"
+                                    >
+                                        <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                                            <MapPin size={32} className="text-primary group-hover:text-white" />
                                         </div>
-                                    </div>
-                                </motion.div>
+                                        <h3 className="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">{city.name}</h3>
+                                        <p className="text-sm text-gray-500 mb-4">{city.zip}</p>
+                                        <span className="text-sm font-semibold text-primary mt-auto flex items-center gap-1">
+                                            Voir la zone <Clock size={14} />
+                                        </span>
+                                    </motion.div>
+                                </Link>
                             ))}
                         </div>
                     </div>

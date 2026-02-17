@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Shield, Key, FileCheck, Phone, AlertTriangle } from 'lucide-react';
 import serrurierImage from '../assets/services-hero.png';
+import TrustedBy from '../components/TrustedBy';
 
 const Services = () => {
     const services = [
@@ -215,17 +216,8 @@ const Services = () => {
                 </div>
             </section>
 
-            <section className="bg-white py-24">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold text-secondary mb-12">Marques Partenaires</h2>
-                    <div className="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                        {/* Logos placeholders - text for now */}
-                        {["Vachette", "Fichet", "Bricard", "Picard", "Abus", "Muel"].map((brand) => (
-                            <span key={brand} className="text-2xl font-bold text-gray-400 uppercase tracking-widest">{brand}</span>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            {/* Marques Partenaires - using TrustedBy component */}
+            <TrustedBy />
 
             <section className="py-20 bg-primary/10">
                 <div className="container mx-auto px-4 text-center">

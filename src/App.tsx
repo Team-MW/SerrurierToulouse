@@ -5,6 +5,7 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import ZonesIntervention from './pages/ZonesIntervention';
+import CityPage from './pages/CityPage';
 import MentionsLegales from './pages/MentionsLegales';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -21,6 +22,7 @@ function App() {
                     <Route path="portfolio" element={<Portfolio />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="zones-intervention" element={<ZonesIntervention />} />
+                    <Route path="intervention/:citySlug" element={<CityPage />} />
                     <Route path="mentions-legales" element={<MentionsLegales />} />
                 </Route>
             </Routes>

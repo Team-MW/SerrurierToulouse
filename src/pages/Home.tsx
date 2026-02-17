@@ -5,8 +5,27 @@ import { Helmet } from 'react-helmet-async';
 import Reviews from '../components/Reviews';
 import serrurierImage from '../assets/serrurier-hero.png';
 import serrurierTravailleImage from '../assets/serrurier-travaille-sur-porte.jpg';
+import TrustedBy from '../components/TrustedBy';
+import BurglaryAdvice from '../components/BurglaryAdvice';
+import { Ruler, DoorOpen, Home as HomeIcon, CreditCard, Award, MapPin } from 'lucide-react';
+
+import { cityData } from '../data/citiesData';
 
 const Home = () => {
+    // ...
+    // ... (scroll down to render area)
+    // ...
+    <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-gray-600">
+        {Object.values(cityData).map((city, index) => (
+            <Link
+                key={index}
+                to={`/intervention/${city.slug}`}
+                className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100 hover:text-primary hover:shadow-md transition-all"
+            >
+                {city.name}
+            </Link>
+        ))}
+    </div>
     const fadeInUp = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -90,7 +109,7 @@ const Home = () => {
             </div>
 
             {/* Services Preview - Light Background */}
-            <section className="py-24 bg-white">
+            <section className="py-24 bg-white relative z-10">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -100,26 +119,43 @@ const Home = () => {
                         className="text-center mb-16"
                     >
                         <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-2">Nos Expertises</h2>
-                        <h3 className="text-4xl font-bold text-secondary mb-4">Services de Serrurerie Professionnels</h3>
-                        <p className="text-gray-500 max-w-2xl mx-auto">Nous intervenons pour tous types de problèmes, de l'ouverture de porte claquée au blindage de haute sécurité.</p>
+                        <h3 className="text-4xl font-bold text-secondary mb-4">Services de Serrurerie & Vitrerie</h3>
+                        <p className="text-gray-500 max-w-2xl mx-auto">
+                            Intervention complète pour vos besoins en sécurité intérieure et extérieure.
+                        </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-8 mb-16">
                         {[
                             {
                                 icon: <Key size={40} className="text-primary mb-4" />,
                                 title: "Ouverture de Porte",
-                                desc: "Porte claquée ou fermée à clé ? Ouverture fine sans dégâts dans la majorité des cas."
+                                desc: "Porte claquée ou fermée à clé ? Ouverture fine sans dégâts dans la majorité des cas. Intervention d'urgence."
                             },
                             {
                                 icon: <Lock size={40} className="text-primary mb-4" />,
                                 title: "Changement de Serrure",
-                                desc: "Remplacement de cylindres, serrures multipoints et installation de haute sécurité A2P."
+                                desc: "Remplacement de cylindres, serrures multipoints et installation de haute sécurité A2P pour votre domicile."
                             },
                             {
                                 icon: <ShieldCheck size={40} className="text-primary mb-4" />,
                                 title: "Blindage de Porte",
-                                desc: "Renforcement de votre porte existante ou installation d'un bloc-porte blindé sur mesure."
+                                desc: "Renforcement de votre porte existante ou installation d'un bloc-porte blindé sur mesure pour une sécurité maximale."
+                            },
+                            {
+                                icon: <Ruler size={40} className="text-primary mb-4" />,
+                                title: "Vitrerie & Miroiterie",
+                                desc: "Remplacement de vitrage cassé, installation de double vitrage, miroirs sur mesure et vitrines de magasin."
+                            },
+                            {
+                                icon: <DoorOpen size={40} className="text-primary mb-4" />,
+                                title: "Fermeture & Portails",
+                                desc: "Installation et réparation de rideaux métalliques, portails, volets roulants et grilles de défense."
+                            },
+                            {
+                                icon: <HomeIcon size={40} className="text-primary mb-4" />,
+                                title: "Intérieur & Extérieur",
+                                desc: "Sécurisation complète de votre habitat : portes de garage, boîtes aux lettres, et accès extérieurs."
                             }
                         ].map((service, index) => (
                             <motion.div
@@ -142,11 +178,39 @@ const Home = () => {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Specific Highlight: Ouverture Porte Claquée */}
+                    <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div>
+                            <h3 className="text-2xl font-bold text-secondary mb-2">Une porte claquée ? Ne paniquez pas.</h3>
+                            <p className="text-gray-600 mb-4">
+                                Dans 90% des cas, nous ouvrons votre porte claquée sans abîmer la serrure (cliché radio).
+                                <br />Intervention garantie sans destruction inutile.
+                            </p>
+                            <div className="flex flex-wrap gap-4 mt-2">
+                                <span className="flex items-center gap-2 text-sm font-semibold text-blue-800 bg-blue-100 px-3 py-1 rounded-full">
+                                    <Award size={16} /> Mandaté & Agréé Assurances
+                                </span>
+                                <span className="flex items-center gap-2 text-sm font-semibold text-blue-800 bg-blue-100 px-3 py-1 rounded-full">
+                                    <CreditCard size={16} /> Paiement CB Accepté
+                                </span>
+                            </div>
+                        </div>
+                        <a
+                            href="tel:+33671876080"
+                            className="bg-primary hover:bg-orange-600 text-white whitespace-nowrap px-8 py-4 rounded-lg font-bold text-lg shadow-lg shadow-orange-500/30 transition-all"
+                        >
+                            Appeler maintenant
+                        </a>
+                    </div>
                 </div>
             </section>
 
+            {/* Trusted By Section (New) */}
+            <TrustedBy />
+
             {/* Why Choose Us / Value Proposition - Darker Background (Alternating) */}
-            <section className="py-24 bg-gray-900 text-white relative overflow-hidden">
+            <section className="py-24 bg-gray-900 text-white relative overflow-hidden rounded-t-[50px] -mt-8 pt-32">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-800/50 skew-x-12 transform translate-x-20"></div>
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -156,14 +220,15 @@ const Home = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-2">Pourquoi Nous ?</h2>
-                            <h3 className="text-4xl font-bold mb-6">L'Expertise et la Transparence avant tout</h3>
+                            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-2">Pourquoi Choisir Notre Entreprise ?</h2>
+                            <h3 className="text-4xl font-bold mb-6">Expertise, Transparence et Confiance</h3>
                             <ul className="space-y-6">
                                 {[
                                     "Devis gratuit et détaillé avant toute intervention",
                                     "Tarifs agréés assurances (Macif, Maaf, Axa...)",
-                                    "Artisans qualifiés et expérimentés",
-                                    "Matériel de qualité (Picard, Vachette, Fichet)"
+                                    "Artisans qualifiés, mandatés et agréés",
+                                    "Matériel haute sécurité (Picard, Vachette, Fichet)",
+                                    "Paiement Carte Bancaire accepté"
                                 ].map((item, i) => (
                                     <motion.li
                                         key={i}
@@ -202,6 +267,32 @@ const Home = () => {
                                 />
                             </div>
                         </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Post-Burglary Advice Section (New) */}
+            <BurglaryAdvice />
+
+            {/* Zones d'Intervention - Map Section (New) */}
+            <section className="py-16 bg-gray-50">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-8 flex items-center justify-center gap-2">
+                        <MapPin className="text-primary" /> Zones d'Intervention
+                    </h2>
+                    <p className="mb-8 text-gray-600">
+                        Nous intervenons rapidement sur Toulouse et toute sa périphérie :
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-gray-600">
+                        {Object.values(cityData).map((city, index) => (
+                            <Link
+                                key={index}
+                                to={`/intervention/${city.slug}`}
+                                className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100 hover:text-primary hover:shadow-md transition-all"
+                            >
+                                {city.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </section>
