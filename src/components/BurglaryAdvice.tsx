@@ -4,15 +4,15 @@ import serrurierTravaille from '../assets/serrurier-travaille-sur-porte.jpg';
 
 const BurglaryAdvice = () => {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-12 md:py-24 bg-white">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-10 md:mb-16"
                 >
-                    <h2 className="text-secondary text-3xl md:text-4xl font-bold mb-4">
+                    <h2 className="text-secondary text-2xl md:text-4xl font-bold mb-4">
                         Que faire après un cambriolage ?
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -20,7 +20,7 @@ const BurglaryAdvice = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-6 md:gap-8">
                     {[
                         {
                             image: "https://images.unsplash.com/photo-1555881400-74d7acaacd81?auto=format&fit=crop&q=80&w=800",
@@ -67,12 +67,12 @@ const BurglaryAdvice = () => {
                     ))}
                 </div>
 
-                <div className="mt-12 text-center bg-blue-50 p-8 rounded-xl border border-blue-100">
+                <div className="mt-8 md:mt-12 text-center bg-blue-50 p-6 md:p-8 rounded-xl border border-blue-100">
                     <p className="text-lg text-blue-800 font-medium mb-4">
                         <span className="font-bold">Important :</span> Nous sommes habitués à travailler en relation avec les assurances pour les dossiers cambriolage.
                         Nos tarifs sont agréés et nos factures détaillées facilitent vos remboursements.
                     </p>
-                    <Link to="/contact" className="inline-block bg-primary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-lg shadow-orange-500/30">
+                    <Link to="/contact" className="w-full md:w-auto inline-block bg-primary hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-lg shadow-orange-500/30">
                         Demander une sécurisation d'urgence
                     </Link>
                 </div>

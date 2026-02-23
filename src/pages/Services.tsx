@@ -50,18 +50,18 @@ const Services = () => {
                 <img
                     src={serrurierImage}
                     alt="Serrurier professionnel au travail"
-                    className="absolute top-0 left-0 w-full h-[400px] object-cover z-0"
+                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
                 />
                 {/* Background Overlay */}
-                <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-r from-secondary via-secondary opacity-70 z-10"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-secondary via-secondary opacity-70 z-10"></div>
 
-                <section className="relative text-white py-20 pt-32 text-center">
+                <section className="relative text-white py-12 pt-24 md:py-20 md:pt-32 text-center min-h-[400px] h-auto flex flex-col justify-center">
                     <div className="container mx-auto px-4 z-10 relative">
                         <motion.h1
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="text-4xl md:text-5xl font-bold mb-6"
+                            className="text-3xl md:text-4xl md:text-5xl font-bold mb-6"
                         >
                             Nos Prestations Serrurerie
                         </motion.h1>

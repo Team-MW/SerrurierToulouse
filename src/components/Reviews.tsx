@@ -24,18 +24,18 @@ const reviews = [
 
 const Reviews = () => {
     return (
-        <section className="py-12 bg-white">
+        <section className="py-8 md:py-12 bg-white">
             <div className="container mx-auto px-4">
                 {/* Header Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="max-w-3xl mx-auto text-center mb-16"
+                    className="max-w-3xl mx-auto text-center mb-10 md:mb-16"
                 >
 
 
-                    <h2 className="text-3xl font-bold text-secondary mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-2">
                         Ce que disent nos clients
                     </h2>
 
@@ -45,7 +45,7 @@ const Reviews = () => {
                                 <Star key={i} size={28} fill="#FCD34D" className="text-yellow-400" />
                             ))}
                         </div>
-                        <span className="text-2xl font-bold text-secondary">5.0</span>
+                        <span className="text-xl md:text-2xl font-bold text-secondary">5.0</span>
                         <span className="text-gray-500">sur Google</span>
                     </div>
 

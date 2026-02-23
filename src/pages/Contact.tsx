@@ -43,10 +43,10 @@ const Contact = () => {
                 {/* Background Overlay */}
                 <div className="absolute top-0 left-0 w-full h-[350px] bg-gradient-to-r from-secondary via-secondary opacity-70 z-10"></div>
 
-                <section className="relative text-white py-20 pt-32 text-center">
+                <section className="relative text-white py-12 pt-24 md:py-20 md:pt-32 text-center">
                     <div className="container mx-auto px-4 z-10 relative">
                         <motion.h1
-                            className="text-4xl font-bold mb-4"
+                            className="text-3xl md:text-4xl font-bold mb-4"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5 }}
@@ -60,7 +60,7 @@ const Contact = () => {
 
             <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4">
-                    <div className="grid lg:grid-cols-2 gap-16">
+                    <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
 
                         {/* Contact Info */}
                         <motion.div
@@ -163,7 +163,7 @@ const Contact = () => {
             </section>
 
             {/* Map Placeholder */}
-            <section className="h-96 w-full bg-gray-200 relative">
+            <section className="h-64 md:h-96 w-full bg-gray-200 relative">
                 <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-xl">
                     <MapPin size={48} className="mb-2" />
                     Carte Google Maps Intégrée ici

@@ -12,20 +12,7 @@ import { Ruler, DoorOpen, Home as HomeIcon, CreditCard, Award, MapPin } from 'lu
 import { cityData } from '../data/citiesData';
 
 const Home = () => {
-    // ...
-    // ... (scroll down to render area)
-    // ...
-    <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-gray-600">
-        {Object.values(cityData).map((city, index) => (
-            <Link
-                key={index}
-                to={`/intervention/${city.slug}`}
-                className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100 hover:text-primary hover:shadow-md transition-all"
-            >
-                {city.name}
-            </Link>
-        ))}
-    </div>
+
     const fadeInUp = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -40,6 +27,34 @@ const Home = () => {
             <Helmet>
                 <title>Serrurier Toulouse - Dépannage Urgence 24/7 & Installation</title>
                 <meta name="description" content="Serrurier expert à Toulouse. Intervention rapide en 30 min pour ouverture de porte, changement de serrure et sécurisation. Devis gratuit." />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": "Serrurier Toulouse",
+                        "image": "https://leserruriertoulousain.com/logo.png",
+                        "url": "https://leserruriertoulousain.com/",
+                        "telephone": "+33758484477",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Toulouse",
+                            "postalCode": "31000",
+                            "addressCountry": "FR"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 43.604652,
+                            "longitude": 1.444209
+                        },
+                        "openingHoursSpecification": {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                            "opens": "00:00",
+                            "closes": "23:59"
+                        },
+                        "priceRange": "€€"
+                    })
+                }} />
             </Helmet>
 
             {/* Hero Section Wrapper - extends behind navbar */}
@@ -81,11 +96,11 @@ const Home = () => {
 
                             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
                                 <a
-                                    href="tel:+33671876080"
+                                    href="tel:+33758484477"
                                     className="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-500/30"
                                 >
                                     <Phone size={24} />
-                                    06 71 87 60 80
+                                    07 58 48 44 77
                                 </a>
                                 <Link
                                     to="/contact"
@@ -197,7 +212,7 @@ const Home = () => {
                             </div>
                         </div>
                         <a
-                            href="tel:+33671876080"
+                            href="tel:+33758484477"
                             className="bg-primary hover:bg-orange-600 text-white whitespace-nowrap px-8 py-4 rounded-lg font-bold text-lg shadow-lg shadow-orange-500/30 transition-all"
                         >
                             Appeler maintenant
@@ -306,8 +321,8 @@ const Home = () => {
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">Une urgence ? Besoin d'un conseil ?</h2>
                     <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">Nos experts sont à votre écoute pour sécuriser votre domicile ou votre commerce.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="tel:+33123456789" className="bg-white text-secondary font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
-                            01 23 45 67 89
+                        <a href="tel:+33758484477" className="bg-white text-secondary font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                            07 58 48 44 77
                         </a>
                         <Link to="/contact" className="bg-secondary/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-4 rounded-lg hover:bg-secondary/40 transition-colors">
                             Nous écrire

@@ -40,6 +40,29 @@ const CityPage = () => {
             <Helmet>
                 <title>{city.seoTitle}</title>
                 <meta name="description" content={city.seoDesc} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": city.seoTitle,
+                        "image": "https://leserruriertoulousain.com/logo.png",
+                        "url": `https://leserruriertoulousain.com/intervention/${city.slug}`,
+                        "telephone": "+33758484477",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": city.name,
+                            "postalCode": city.zip,
+                            "addressCountry": "FR"
+                        },
+                        "openingHoursSpecification": {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                            "opens": "00:00",
+                            "closes": "23:59"
+                        },
+                        "priceRange": "€€"
+                    })
+                }} />
             </Helmet>
 
             {/* Hero Section */}
@@ -47,11 +70,11 @@ const CityPage = () => {
                 <img
                     src={serrurierImage}
                     alt={`Serrurier à ${city.name}`}
-                    className="absolute top-0 left-0 w-full h-[600px] object-cover z-0"
+                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
                 />
-                <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent z-10"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent z-10"></div>
 
-                <section className="relative text-white py-32 pt-48 container mx-auto px-4 z-20 h-[600px] flex flex-col justify-center">
+                <section className="relative text-white py-20 pt-32 md:pt-48 container mx-auto px-4 z-20 min-h-[600px] h-auto flex flex-col justify-center">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -59,7 +82,7 @@ const CityPage = () => {
                         className="max-w-4xl"
                     >
                         {/* Breadcrumbs */}
-                        <div className="flex items-center gap-2 text-sm text-gray-300 mb-6 font-medium">
+                        <div className="flex flex-wrap items-center gap-2 text-sm text-gray-300 mb-6 font-medium">
                             <Link to="/" className="hover:text-white transition-colors">Accueil</Link>
                             <span>/</span>
                             <Link to="/zones-intervention" className="hover:text-white transition-colors">Zones d'Intervention</Link>
@@ -72,7 +95,7 @@ const CityPage = () => {
                             <span className="text-sm font-bold uppercase tracking-wider">Intervention {city.zip}</span>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                             Serrurier à <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">{city.name}</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-2xl leading-relaxed font-light">
@@ -80,7 +103,7 @@ const CityPage = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
-                                href="tel:+33671876080"
+                                href="tel:+33758484477"
                                 className="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-500/30 transform hover:-translate-y-1"
                             >
                                 <Phone size={24} />
@@ -188,7 +211,7 @@ const CityPage = () => {
 
                                 <div className="mt-8 bg-blue-600 text-white p-6 rounded-xl text-center">
                                     <p className="font-medium mb-4">Une autre question ?</p>
-                                    <a href="tel:+33671876080" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors w-full">
+                                    <a href="tel:+33758484477" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors w-full">
                                         Nous appeler
                                     </a>
                                 </div>
