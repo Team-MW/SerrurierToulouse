@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import serrurierTravaille from '../assets/serrurier-travaille-sur-porte.jpg';
+import policeImage from '../assets/maxstockworld490282-69974c3ee8322947263763.jpg';
 
 const BurglaryAdvice = () => {
     return (
@@ -23,7 +24,7 @@ const BurglaryAdvice = () => {
                 <div className="grid md:grid-cols-3 gap-6 md:gap-8">
                     {[
                         {
-                            image: "https://images.unsplash.com/photo-1542382156909-9ae37b3f56fd?auto=format&fit=crop&q=80&w=800",
+                            image: policeImage,
                             step: "1. Appelez la Police / Gendarmerie",
                             desc: "Ne touchez à rien ! Appelez immédiatement le 17 ou le 112. Les forces de l'ordre doivent constater l'effraction et relever les empreintes avant toute intervention."
                         },
