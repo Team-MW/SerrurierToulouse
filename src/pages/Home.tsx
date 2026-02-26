@@ -34,7 +34,7 @@ const Home = () => {
                         "name": "Serrurier Toulouse",
                         "image": "https://leserruriertoulousain.com/logo.png",
                         "url": "https://leserruriertoulousain.com/",
-                        "telephone": "+33758484477",
+                        "telephone": "+33671876080",
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": "Toulouse",
@@ -96,11 +96,11 @@ const Home = () => {
 
                             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4">
                                 <a
-                                    href="tel:+33758484477"
+                                    href="tel:+33671876080"
                                     className="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-500/30"
                                 >
                                     <Phone size={24} />
-                                    07 58 48 44 77
+                                    06 71 87 60 80
                                 </a>
                                 <Link
                                     to="/contact"
@@ -212,7 +212,7 @@ const Home = () => {
                             </div>
                         </div>
                         <a
-                            href="tel:+33758484477"
+                            href="tel:+33671876080"
                             className="bg-primary hover:bg-orange-600 text-white whitespace-nowrap px-8 py-4 rounded-lg font-bold text-lg shadow-lg shadow-orange-500/30 transition-all"
                         >
                             Appeler maintenant
@@ -321,8 +321,8 @@ const Home = () => {
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">Une urgence ? Besoin d'un conseil ?</h2>
                     <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">Nos experts sont à votre écoute pour sécuriser votre domicile ou votre commerce.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="tel:+33758484477" className="bg-white text-secondary font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
-                            07 58 48 44 77
+                        <a href="tel:+33671876080" className="bg-white text-secondary font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                            06 71 87 60 80
                         </a>
                         <Link to="/contact" className="bg-secondary/20 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-4 rounded-lg hover:bg-secondary/40 transition-colors">
                             Nous écrire

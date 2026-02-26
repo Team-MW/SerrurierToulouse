@@ -47,7 +47,7 @@ const CityPage = () => {
                         "name": city.seoTitle,
                         "image": "https://leserruriertoulousain.com/logo.png",
                         "url": `https://leserruriertoulousain.com/intervention/${city.slug}`,
-                        "telephone": "+33758484477",
+                        "telephone": "+33671876080",
                         "address": {
                             "@type": "PostalAddress",
                             "addressLocality": city.name,
@@ -103,7 +103,7 @@ const CityPage = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
-                                href="tel:+33758484477"
+                                href="tel:+33671876080"
                                 className="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-orange-500/30 transform hover:-translate-y-1"
                             >
                                 <Phone size={24} />
@@ -211,7 +211,7 @@ const CityPage = () => {
 
                                 <div className="mt-8 bg-blue-600 text-white p-6 rounded-xl text-center">
                                     <p className="font-medium mb-4">Une autre question ?</p>
-                                    <a href="tel:+33758484477" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors w-full">
+                                    <a href="tel:+33671876080" className="inline-block bg-white text-blue-600 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors w-full">
                                         Nous appeler
                                     </a>
                                 </div>
